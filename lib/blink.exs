@@ -11,7 +11,9 @@ defmodule Blink do
   end
 
   def eyes_open do
-    print(" OwO ")
+    blue = IO.ANSI.red()
+    black = IO.ANSI.black()
+    print(" #{blue}O#{black}w#{blue}O#{black} ")
     time = @open_time * :rand.uniform(30)
     :timer.sleep(time)
     blink()
@@ -19,7 +21,7 @@ defmodule Blink do
   end
 
   def blink do
-    print(" ^_^ ")
+    print(" ^w^ ")
     time = @closed_time * :rand.uniform(30)
     :timer.sleep(time)
   end
