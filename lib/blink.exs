@@ -11,9 +11,9 @@ defmodule Blink do
   end
 
   def eyes_open do
-    blue = IO.ANSI.red()
-    black = IO.ANSI.black()
-    print(" #{blue}O#{black}w#{blue}O#{black} ")
+    eyes = IO.ANSI.red() <> IO.ANSI.bright()
+    normal = IO.ANSI.black() <> IO.ANSI.normal()
+    print(" #{eyes}O#{normal}w#{eyes}O#{normal} ")
     time = @open_time * :rand.uniform(30)
     :timer.sleep(time)
     blink()
